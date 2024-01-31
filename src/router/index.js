@@ -1,13 +1,13 @@
 import config from "../config";
 
-import Home from "../pages/Home";
+import About from "../pages/About";
 import Skills from "../pages/Skills";
 import Games from "../pages/Games";
 import Specs from "../pages/Specs";
 import Projects from "../pages/Projects";
 
 const publicRoutes = [
-  { path: config.routes.home, component: Home },
+  { path: config.routes.home, component: About },
   { path: config.routes.skill, component: Skills },
   { path: config.routes.games, component: Games },
   { path: config.routes.projects, component: Projects },

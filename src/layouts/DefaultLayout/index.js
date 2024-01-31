@@ -4,11 +4,11 @@ import Navbar from "../Navbar";
 
 function DefaultLayout({ children }) {
   return (
-    <div className='bg-cyan-100 min-h-dvh'>
-      <div className='max-w-6xl mx-auto p-5'>
+    <div className='bg-cyan-100 min-h-dvh' >
+      <div className='max-w-6xl mx-auto md:p-5'>
         <Header></Header>
         <Navbar></Navbar>
-        <div className='flex p-5 rounded-xl bg-white shadow-sm mt-3'>{children}</div>
+        <div className='flex p-5 md:rounded-xl bg-white shadow-sm md:mt-3'>{children}</div>
       </div>
     </div>
   );
