@@ -75,7 +75,7 @@ function UserInfo() {
           <input type='button' value='' />
         </p>
         {isHovered && (
-          <div className='absolute z-10 translate-x-[-20px] p-2 rounded-xl bg-slate-50 border-dashed border-cyan-500 border-4'>
+          <div className='absolute z-10 translate-x-[-20px] p-2 rounded-xl bg-slate-100 border-dashed border-cyan-500 border-4'>
             <p>Có thể {username} đang ở ngoài 🚪 hoặc đang ngủ 💤</p>
           </div>
         )}
@@ -118,7 +118,7 @@ function UserInfo() {
             </p>
 
             {isWeather && (
-              <div className='absolute z-10 translate-x-[-20px] p-2 rounded-xl bg-slate-50 border-dashed border-cyan-500 border-4'>
+              <div className='absolute z-10 translate-x-[-20px] p-2 rounded-xl bg-slate-100 border-dashed border-cyan-500 border-4'>
                 <p>⛺ Thành phố: {weather.name}</p>
                 <p>⛅ Nhiệt độ: {weather.main.temp} ºC</p>
                 <p>💧 Độ ẩm: {weather.main.humidity}%</p>

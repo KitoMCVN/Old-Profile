@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 
 function Nav() {
-  const navItemStyle = "flex gap-1 bg-cyan-200 px-2 py-[2px] rounded-md hover:bg-cyan-500";
+  const navItemStyle = "flex gap-1 bg-cyan-200 px-2 py-[2px] rounded-md hover:bg-cyan-500 transition";
 
   const aboutIcon = (
     <svg className='w-5 h-5 text-yellow-500 translate-y-[1px]' aria-hidden='true' xmlns='http://www.w3.org/2000/svg' fill='currentColor' viewBox='0 0 24 24'>
@@ -47,7 +47,7 @@ function Nav() {
   );
 
   return (
-    <div className='flex md:p-2 pb-8 py-2 px-5 md:rounded-xl bg-white shadow-sm md:mt-3 md:border-none'>
+    <div className='flex md:p-2 pb-8 py-2 px-5 md:rounded-xl bg-white shadow-sm md:mt-3 md:border-none '>
       <div className='flex gap-3 text-neutral-800 font-bold text-base flex-wrap'>
         <Link to='/'>
           <div className={navItemStyle}>About {aboutIcon}</div>
