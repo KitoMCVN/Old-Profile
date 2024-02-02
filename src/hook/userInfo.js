@@ -45,7 +45,7 @@ function UserInfo() {
 
   const online = (
     <div className='flex items-center'>
-      <div className='size-3 rounded-full bg-cyan-500 translate-y-[-1px]'>
+      <div className='size-3 rounded-full bg-cyan-500'>
         <div className='size-3 rounded-full bg-cyan-500 animate-ping'></div>
       </div>
       <div className='ml-2 ' onMouseEnter={() => setIsHovered(true)} onMouseLeave={() => setIsHovered(false)}>
@@ -66,7 +66,7 @@ function UserInfo() {
 
   const offline = (
     <div className='flex items-center'>
-      <div className='size-3 rounded-full bg-red-600 translate-y-[-1px]'>
+      <div className='size-3 rounded-full bg-red-600'>
         <div className='size-3 rounded-full bg-red-600 animate-ping'></div>
       </div>
       <div className='ml-2 ' onMouseEnter={() => setIsHovered(true)} onMouseLeave={() => setIsHovered(false)}>
@@ -112,10 +112,8 @@ function UserInfo() {
           <svg className='w-5 h-5 text-gray-800  -translate-x-[4px] -translate-y-[1px]' aria-hidden='true' xmlns='http://www.w3.org/2000/svg' fill='currentColor' viewBox='0 0 24 24'>
             <path fillRule='evenodd' d='M12 2a8 8 0 0 1 6.6 12.6l-.1.1-.6.7-5.1 6.2a1 1 0 0 1-1.6 0L6 15.3l-.3-.4-.2-.2v-.2A8 8 0 0 1 11.8 2Zm3 8a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z' clipRule='evenodd' />
           </svg>
-          <div className='font-semibold text-gray-900'>
-            <p onMouseEnter={() => setIsWeather(true)} onMouseLeave={() => setIsWeather(false)}>
-              Sóc Trăng, Việt Nam
-            </p>
+          <div className='font-semibold text-gray-900' onMouseEnter={() => setIsWeather(true)} onMouseLeave={() => setIsWeather(false)}>
+            <p>Sóc Trăng, Việt Nam</p>
 
             {isWeather && (
               <div className='absolute z-10 translate-x-[-20px] p-2 rounded-xl bg-slate-100 border-dashed border-cyan-500 border-4'>
