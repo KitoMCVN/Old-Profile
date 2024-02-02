@@ -55,7 +55,7 @@ function UserInfo() {
             {activities.map((activity) => (
               <div key={activity.id}>
                 <p>Tui đang ở nhà 🏡 hoặc ngoài quán cafe ☕</p>
-                <p>Chơi Game: {activity.name}</p>
+                <p>Đang Chơi 🌠: {activity.name}</p>
               </div>
             ))}
           </div>
