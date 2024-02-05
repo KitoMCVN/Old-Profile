@@ -7,7 +7,8 @@ function Projects() {
         <div className='bg-neutral-800 h-[36px] w-2'></div>
         <h2>Projects 🕓</h2>
       </div>
-      <div className='grid lg:grid-cols-3 gap-4 md:grid-cols-2 sm:grid-cols-1'>
+      <p>Các dự án của tui 💾, tuy không được tốt nhưng... </p>
+      <div className='mt-6 grid lg:grid-cols-3 gap-4 md:grid-cols-2 sm:grid-cols-1'>
         <GithubProjects />
       </div>
     </div>

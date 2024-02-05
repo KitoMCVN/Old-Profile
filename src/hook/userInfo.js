@@ -14,7 +14,7 @@ function UserInfo() {
         const response = await axios.get("https://api.lanyard.rest/v1/users/915876843884777472");
         setUserData(response.data.data);
       } catch (error) {
-        console.error("Error fetching data:", error);
+        console.error("Lỗi:", error);
       }
     };
 
@@ -28,7 +28,7 @@ function UserInfo() {
         setWeather(response.data);
       })
       .catch((error) => {
-        console.error("Error fetching weather data:", error);
+        console.error("Lỗi:", error);
       });
   };
 
