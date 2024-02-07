@@ -52,12 +52,18 @@ function UserInfo() {
         <p>Có vẻ cậu ấy đang online</p>
         {isHovered && (
           <div className='absolute z-10 translate-x-[-20px] p-2 rounded-xl bg-slate-50 border-dashed border-cyan-500 border-4'>
-            {activities.map((activity) => (
-              <div key={activity.id}>
+            {activities.length === 0 ? (
+              <div>
                 <p>Tui đang ở nhà 🏡 hoặc ngoài quán cafe ☕</p>
-                <p>Đang Chơi 🌠: {activity.name}</p>
               </div>
-            ))}
+            ) : (
+              activities.map((activity) => (
+                <div key={activity.id}>
+                  <p>Tui đang ở nhà 🏡 hoặc ngoài quán cafe ☕</p>
+                  <p>Đang Chơi 🌠: {activity.name}</p>
+                </div>
+              ))
+            )}
           </div>
         )}
       </div>
