@@ -5,7 +5,7 @@ import Footer from "../Footer";
 
 function DefaultLayout({ children }) {
   return (
-    <div className='bg-cyan-100 min-h-dvh'>
+    <div className='bg-cyan-100 min-h-dvh overflow-hidden'>
       <div className='max-w-6xl mx-auto md:p-5'>
         <Header></Header>
         <Navbar></Navbar>

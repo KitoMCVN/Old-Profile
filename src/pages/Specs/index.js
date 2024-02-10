@@ -5,7 +5,7 @@ function Specs() {
     laptopCpu: "Intel Core 2 Duo T6570 (2.10 GHz, 800 MHz)",
     laptopRam: "3GB DDR2 (667MHz)",
     laptopGpu: "Intel 4 Series Express Chipset Family",
-    laptopDisplay: "1366 x 768 (32 bit, 60Hz)",
+    laptopDisplay: "Không có",
     laptopOs: "Windows 10 Home 22H2",
     laptopDisk: "SSD-EEKOO-128G (128GB, 500MB/s)",
   };
@@ -36,13 +36,14 @@ function Specs() {
   const PhoneInfo = ({ phoneCpu, phoneRam, phoneDisplay, phoneOs, phoneDisk, phoneCam, phonePin }) => (
     <>
       <ul className='list-disc text-sm ml-6'>
-        <li>CPU: {phoneCpu}</li>
+        <li>Không có</li>
+        {/* <li>CPU: {phoneCpu}</li>
         <li>RAM: {phoneRam}</li>
         <li>Disk: {phoneDisk}</li>
         <li>Màn: {phoneDisplay}</li>
         <li>Os: {phoneOs}</li>
         <li>Camera: {phoneCam}</li>
-        <li>Pin, sạc: {phonePin}</li>
+        <li>Pin, sạc: {phonePin}</li> */}
       </ul>
     </>
   );
@@ -64,7 +65,7 @@ function Specs() {
           </div>
           <div className='p-2 rounded-xl bg-slate-200'>
             <h4 className='mb-1 text-2xl font-bold'>
-              Phone<span className='text-xl ml-2 inline-block'>(Redmi 9a)</span>
+              Phone<span className='text-xl ml-2 inline-block'></span>
             </h4>
             <PhoneInfo {...phoneSpecs} />
           </div>

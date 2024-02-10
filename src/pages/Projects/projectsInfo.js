@@ -9,7 +9,7 @@ const ProjectDetails = () => {
     fetch(`https://api.github.com/repos/KitoMCVN/${projectName}`)
       .then((response) => response.json())
       .then((data) => setProject(data))
-      .catch((error) => console.error(`Error fetching details for ${projectName}:`, error));
+      .catch((error) => console.error(`Lỗi ${projectName}:`, error));
   }, [projectName]);
 
   return (

@@ -5,7 +5,7 @@ function About() {
         <div className='bg-neutral-800 h-[36px] w-2'></div>
         <h2>About 💤</h2>
       </div>
-      <div className='mt-8 grid grid-cols-2 font-semibold'>
+      <div className='mt-8 md:grid grid-cols-2 font-semibold'>
         <div>
           <h4 className='text-2xl font-bold'>
             <span className='text-cyan-500 text-[26px]'>#</span> Về tui ✨
@@ -15,7 +15,7 @@ function About() {
             asperiores placeat.
           </p>
         </div>
-        <div className='mx-auto mt-0 md:mx-0 md:mt-8 md:pr-6 lg:pr-12'>
+        <div className='mx-auto mt-0 md:mx-0 md:mt-8 md:pr-6 lg:pr-12 md:block hidden'>
           <svg xmlns='http://www.w3.org/2000/svg' width='128' height='128' viewBox='0 0 24 24' className='float-right h-72 w-72 rounded-lg border-8 border-dashed border-slate-200 bg-slate-100 fill-slate-200 px-12'>
             <g fillRule='evenodd' clipRule='evenodd'>
               <path d='M16 9a4 4 0 1 1-8 0a4 4 0 0 1 8 0'></path>
