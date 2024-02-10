@@ -9,7 +9,7 @@ const GitHubProjects = () => {
   const [blacklist] = useState(["KitoMCVN"]);
 
   useEffect(() => {
-    fetch("https://api.github.com/users/facebook/repos")
+    fetch("https://api.github.com/users/KitoMCVN/repos")
       .then((response) => response.json())
       .then((data) => {
         setProjects(data);

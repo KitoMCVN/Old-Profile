@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useCallback } from "react";
 import { useParams } from "react-router-dom";
 import ReactMarkdown from "react-markdown";
 import "./readme.scss";
@@ -9,21 +9,21 @@ const ProjectDetails = () => {
   const [readme, setReadme] = useState(null);
   const [error, setError] = useState(null);
 
-  const fetchReadme = async (projectUrl) => {
+  const fetchReadme = useCallback(async (projectUrl) => {
     try {
-      const response = await fetch(`https://raw.githubusercontent.com/facebook/${projectName}/main/README.md`);
+      const response = await fetch(`https://raw.githubusercontent.com/KitoMCVN/${projectName}/main/README.md`);
       const data = await response.text();
       const formattedReadme = <ReactMarkdown>{data}</ReactMarkdown>;
       setReadme(formattedReadme);
     } catch (error) {
       setError(error);
     }
-  };
+  }, [projectName]);
 
   useEffect(() => {
     const fetchProjectDetails = async () => {
       try {
-        const response = await fetch(`https://api.github.com/repos/facebook/${projectName}`);
+        const response = await fetch(`https://api.github.com/repos/KitoMCVN/${projectName}`);
         const data = await response.json();
         setProject(data);
         await fetchReadme(data.html_url);
@@ -33,7 +33,8 @@ const ProjectDetails = () => {
     };
 
     fetchProjectDetails();
-  }, [projectName]);
+  }, [projectName, fetchReadme]);
+
   return (
     <div className='w-full'>
       <h2>Project: {projectName}</h2>
