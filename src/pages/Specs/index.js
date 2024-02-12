@@ -57,13 +57,13 @@ function Specs() {
       <p>Thiết bị tui hiện đang sử dụng để chơi game, lập trình, học tập và hàng ngày 💻.</p>
       <div className='w-full mt-4 grid md:grid-cols-2 grid-cols-1 gap-5'>
         <div>
-          <div className='mb-4 p-2 rounded-xl bg-slate-200'>
+          <div className='mb-4 p-2 rounded-xl bg-slate-100'>
             <h4 className='mb-1 text-2xl font-bold'>
               Laptop<span className='text-xl ml-2 inline-block'>(Dell Inspiron 1545)</span>
             </h4>
             <LaptopInfo {...laptopSpecs} />
           </div>
-          <div className='p-2 rounded-xl bg-slate-200'>
+          <div className='p-2 rounded-xl bg-slate-100'>
             <h4 className='mb-1 text-2xl font-bold'>
               Phone<span className='text-xl ml-2 inline-block'></span>
             </h4>
@@ -71,7 +71,7 @@ function Specs() {
           </div>
         </div>
         <div>
-          <div className='mb-4 p-2 rounded-xl bg-slate-200'>
+          <div className='mb-4 p-2 rounded-xl bg-slate-100'>
             <h4 className='mb-1 text-2xl font-bold'>Mạng</h4>
             <ul className='list-disc text-sm ml-6'>
               <li>Mạng 4G: Viettel (ST90N)</li>
@@ -79,7 +79,7 @@ function Specs() {
               <li>Tốc độ upload: 2MB/s</li>
             </ul>
           </div>
-          <div className='p-2 rounded-xl bg-slate-200'>
+          <div className='p-2 rounded-xl bg-slate-100'>
             <h4 className='mb-1 text-2xl font-bold'>Thiết Bị Khác</h4>
             <ul className='list-disc text-sm ml-6'>
               <li>Chuột: Dell MS116</li>
