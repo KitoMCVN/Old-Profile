@@ -1,7 +1,10 @@
 .readme {
-  $linkColor: cyan;
+  $linkColor: darkcyan;
   h1 {
     font-size: 30px;
+    border-bottom: 1px solid rgba(30, 41, 59, 0.4);
+    margin-bottom: 12px;
+    margin-top: 16px;
   }
   a {
     color: $linkColor;
