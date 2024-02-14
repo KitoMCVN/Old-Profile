@@ -45,7 +45,7 @@ function UserInfo() {
         <div className='md:flex gap-6 items-center'>
           <div className='md:m-0 mb-5 mx-auto rounded-full min-w-32 size-32 overflow-hidden border-4 border-cyan-500'>
             <div className='rounded-full overflow-hidden border-4 border-transparent'>
-              <div className='size-[112px] bg-slat3-400 animate-pulse'></div>
+              <div className='size-[112px] bg-slate-300 animate-pulse'></div>
             </div>
           </div>
           <div className='text-gray-900 '>
