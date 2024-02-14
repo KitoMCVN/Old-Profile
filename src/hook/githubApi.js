@@ -7,6 +7,7 @@ import { faHtml5, faJs, faPython, faJava, faPhp, faSwift, faCss3 } from "@fortaw
 const GitHubProjects = () => {
   const [projects, setProjects] = useState([]);
   const [blacklist] = useState(["KitoMCVN"]);
+  const [repoData, setRepoData] = useState(null);
 
   useEffect(() => {
     fetch("https://api.github.com/users/KitoMCVN/repos")
@@ -16,6 +17,12 @@ const GitHubProjects = () => {
       })
       .catch((error) => console.error("Lỗi:", error));
   }, []);
+
+  useEffect(() => {
+    if (projects.length > 0) {
+      setRepoData(projects);
+    }
+  }, [projects]);
 
   const langIcon = {
     JavaScript: <FontAwesomeIcon icon={faJs} />,
@@ -29,6 +36,16 @@ const GitHubProjects = () => {
 
   const filteredProjects = projects.filter((project) => !blacklist.includes(project.name));
 
+  if (!repoData) {
+    return (
+      <>
+        <div className='bg-slate-300 animate-pulse w-full h-[120px] rounded-xl'></div>
+        <div className='bg-slate-300 animate-pulse w-full h-[120px] rounded-xl'></div>
+        <div className='bg-slate-300 animate-pulse w-full h-[120px] rounded-xl'></div>
+      </>
+    );
+  }
+
   return (
     <>
       {filteredProjects.map((project) => {
@@ -39,7 +56,7 @@ const GitHubProjects = () => {
                 <FontAwesomeIcon icon={faBook} />
                 <p>{project.name}</p>
               </div>
-              <p className='text-sm truncate overflow-hidden text-ellipsis'>Mô tả: {project.description}</p>
+              <p className='text-sm truncate w-full overflow-hidden'>Mô tả: {project.description}</p>
               <div className='flex gap-3 text-sm'>
                 {project.language && (
                   <p>

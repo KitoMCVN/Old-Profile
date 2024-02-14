@@ -84,7 +84,7 @@ const ProjectDetails = () => {
               </div>
             </div>
           ) : (
-            <p>Loading languages...</p>
+            <div className='w-full rounded-xl bg-slate-300 animate-pulse h-12 mt-2'></div>
           )}
           {readme ? (
             <div className='mt-6 rounded-xl bg-slate-100 w-full'>
@@ -92,11 +92,11 @@ const ProjectDetails = () => {
               <div className='p-6 readme'>{readme}</div>
             </div>
           ) : (
-            <p>Loading README...</p>
+            <div className='w-56 rounded-full bg-slate-300 animate-pulse h-4 mt-2'></div>
           )}
         </div>
       ) : (
-        <p>Loading project details...</p>
+        <div className='w-56 rounded-full bg-slate-300 animate-pulse h-4 mt-2'></div>
       )}
     </div>
   );

@@ -1,3 +1,7 @@
+import Tippy from "@tippyjs/react";
+import "tippy.js/animations/scale.css";
+import "tippy.js/dist/tippy.css";
+
 function Footer() {
   return (
     <div className='flex p-5 md:rounded-xl bg-white shadow-sm md:mt-3'>
@@ -13,9 +17,11 @@ function Footer() {
           </a>
         </p>
         <p>
-          <a className='text-cyan-500' href='https://omar11.sa/' target='_blank' rel='noopener noreferrer'>
-            Omar Abdulaziz <span className='text-neutral-800'>•</span> ✨
-          </a>
+          <Tippy animation='scale' content='Tui lấy ý tưởng'>
+            <a className='text-cyan-500' href='https://omar11.sa/' target='_blank' rel='noopener noreferrer'>
+              Omar Abdulaziz <span className='text-neutral-800'>•</span> ✨
+            </a>
+          </Tippy>
         </p>
       </div>
     </div>
