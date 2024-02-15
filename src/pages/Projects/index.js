@@ -1,4 +1,4 @@
-import GithubProjects from "../../hook/githubApi";
+import GithubProjects from "../../api/githubApi";
 
 function Projects() {
   return (

@@ -1,4 +1,4 @@
-import Discord from "../../hook/userInfo";
+import Discord from "../../api/userInfo";
 import Tippy from "@tippyjs/react";
 import "tippy.js/animations/scale.css";
 import "tippy.js/dist/tippy.css";
