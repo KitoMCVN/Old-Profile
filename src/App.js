@@ -4,6 +4,9 @@ import { publicRoutes } from "./router";
 import DefaultLayout from "./layouts/DefaultLayout";
 
 function App() {
+  console.log("%cHello! 🙋‍♀️", "color: #0991B2;font-size: 24px;font-weight: 600;");
+  console.log("%cTrang web này là trang cá nhân của KitoMC. Được viết bằng ReactJS,  Tailwind và một chút SCSS. \nCác Api được sửa đụng: Github, Lanyard, Open Weather Map.", "color: #0991B2;font-size: 14px;");
+
   return (
     <Router>
       <Routes>
