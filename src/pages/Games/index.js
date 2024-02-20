@@ -1,6 +1,7 @@
 import Tippy from "@tippyjs/react";
 import "tippy.js/animations/scale.css";
 import "tippy.js/dist/tippy.css";
+import Img from "../../components/img"
 import minecraftPcImg from "../../assets/imgs/games/minecraft.png";
 import minecraftPeImg from "../../assets/imgs/games/minecraftPe.png";
 import stardewValleyImg from "../../assets/imgs/games/stardewValley.png";
@@ -89,7 +90,7 @@ function Games() {
                 <p className='text-cyan-600 w-fit'>{time}h</p>
               </Tippy>
               <div className='w-40 h-64 mb-1 rounded-xl cursor-pointer overflow-hidden transition-all ring-cyan-600 hover:ring-4 focus:ring-4'>
-                <img className='object-cover size-full' src={img} alt={name} />
+                <Img className='object-cover size-full' src={img} alt={name} />
               </div>
               <h4 className='truncate w-full'>{name}</h4>
             </div>
@@ -111,7 +112,7 @@ function Games() {
                 </div>
               }>
               <div key={time} className='flex justify-center border-[1px] border-slate-800/10 items-center rounded-sm overflow-hidden h-[84px] w-full transition-transform ring-cyan-600 hover:ring-2 focus:ring-2'>
-                <img className='object-cover bg-slate-300' src={img} alt={name} />
+                <Img className='object-cover bg-slate-300' src={img} alt={name} />
               </div>
             </Tippy>
           ))}
