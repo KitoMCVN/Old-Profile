@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStar as brandStar } from "@fortawesome/free-solid-svg-icons";
 import { faStar as regularStar } from "@fortawesome/free-regular-svg-icons";
+import Img from "../../components/img"
 import htmlIcon from "../../assets/icons/html.svg";
 import cssIcon from "../../assets/icons/css.svg";
 import javascriptIcon from "../../assets/icons/javascript.svg";
@@ -24,7 +25,7 @@ class Skill {
     return (
       <div className='p-2 my-1 bg-slate-100 rounded-xl flex gap-4 items-center'>
         <div className='size-14 min-w-14 rounded-sm overflow-hidden'>
-          <img className='size-full' src={this.img} alt={this.name} />
+          <Img className='size-full' src={this.img} alt={this.name} />
         </div>
         <div className='w-full group hover:*:whitespace-normal overflow-hidden'>
           <p className='truncate transition-all'>{this.content}</p>
