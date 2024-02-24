@@ -46,6 +46,16 @@ function Nav() {
     </svg>
   );
 
+  const musicIcon = (
+    <svg className='w-5 h-5 text-red-950 translate-y-[1px]' aria-hidden='true' xmlns='http://www.w3.org/2000/svg' fill='currentColor' viewBox='0 0 24 24'>
+      <path
+        fillRule='evenodd'
+        d='M17.3 4a1 1 0 0 0-.9.2 1 1 0 0 0-.4.8v8.6c-.6-.3-1.3-.5-2-.5-2 0-4 1.4-4 3.5 0 2 2 3.4 4 3.4s4-1.3 4-3.4V6.8a3 3 0 0 1 1 2.3c0 .5.4 1 1 1s1-.5 1-1a5 5 0 0 0-1.9-4 6.4 6.4 0 0 0-1.8-1ZM4 5a1 1 0 0 0-1 1c0 .6.4 1 1 1h9c.6 0 1-.4 1-1 0-.5-.4-1-1-1H4Zm0 4a1 1 0 0 0-1 1c0 .6.4 1 1 1h9c.6 0 1-.4 1-1 0-.5-.4-1-1-1H4Zm0 4.1a1 1 0 0 0-1 1c0 .6.4 1 1 1h4c.6 0 1-.4 1-1 0-.5-.4-1-1-1H4Z'
+        clipRule='evenodd'
+      />
+    </svg>
+  );
+
   return (
     <div className='flex md:p-2 pb-8 py-2 px-5 md:rounded-xl bg-white shadow-sm md:mt-3 md:border-none '>
       <div className='flex gap-3 text-neutral-800 font-bold text-base flex-wrap'>
@@ -57,6 +67,9 @@ function Nav() {
         </Link>
         <Link to='/skills'>
           <div className={navItemStyle}>Skills {skillIcon}</div>
+        </Link>
+        <Link to='/music'>
+          <div className={navItemStyle}>Music {musicIcon}</div>
         </Link>
         <Link to='/games'>
           <div className={navItemStyle}>Games {gameIcon}</div>

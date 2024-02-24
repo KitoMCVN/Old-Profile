@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStar as brandStar } from "@fortawesome/free-solid-svg-icons";
 import { faStar as regularStar } from "@fortawesome/free-regular-svg-icons";
-import Img from "../../components/img"
+import Img from "../../components/img";
 import htmlIcon from "../../assets/icons/html.svg";
 import cssIcon from "../../assets/icons/css.svg";
 import javascriptIcon from "../../assets/icons/javascript.svg";
@@ -12,6 +12,8 @@ import githubIcon from "../../assets/icons/github.svg";
 import notepadppIcon from "../../assets/icons/notepadplusplus.svg";
 import tailwindIcon from "../../assets/icons/tailwind.svg";
 import reactIcon from "../../assets/icons/react.svg";
+import typescriptIcon from "../../assets/icons/typescript.svg";
+import pythonIcon from "../../assets/icons/python.svg";
 
 class Skill {
   constructor(name, content, img, skillLevel) {
@@ -24,7 +26,7 @@ class Skill {
   render() {
     return (
       <div className='p-2 my-1 bg-slate-100 rounded-xl flex gap-4 items-center'>
-        <div className='size-14 min-w-14 rounded-sm overflow-hidden'>
+        <div className='size-14 min-w-14 rounded-xl overflow-hidden'>
           <Img className='size-full' src={this.img} alt={this.name} />
         </div>
         <div className='w-full group hover:*:whitespace-normal overflow-hidden'>
@@ -41,7 +43,7 @@ class Skill {
 }
 
 function Skills() {
-  const [openCategory, setOpenCategory] = useState(null);
+  const [openCategory, setOpenCategory] = useState(0);
 
   const toggleCategory = (index) => {
     setOpenCategory(openCategory === index ? null : index);
@@ -64,6 +66,20 @@ function Skills() {
     ]),
     // eslint-disable-next-line
     new Skill("JavaScript", "JavaScript: Ngôn ngữ linh hoạt tạo tính tương tác ✨ và động 🥏 cho trang web, mang lại trải nghiệm hấp dẫn cho người dùng.", javascriptIcon, [
+      brandStar,
+      regularStar,
+      regularStar,
+      regularStar,
+      regularStar,
+    ]),
+    new Skill("TypeScript", "TypeScript: Ngôn ngữ lập trình mạnh mẽ được xây dựng trên JavaScript, cung cấp cho bạn công cụ tốt hơn ở mọi quy mô", typescriptIcon, [
+      brandStar,
+      regularStar,
+      regularStar,
+      regularStar,
+      regularStar,
+    ]),
+    new Skill("Python", "Python:  Ngôn ngữ có hình thức rất sáng sủa, cấu trúc rõ ràng, thuận tiện cho người mới học lập trình và là ngôn ngữ lập trình dễ học", pythonIcon, [
       brandStar,
       regularStar,
       regularStar,
@@ -110,15 +126,15 @@ function Skills() {
   const categories = [
     {
       name: "Ngôn ngữ",
-      contents: skillList.slice(0, 3),
+      contents: skillList.slice(0, 5),
     },
     {
       name: "Frameworks & Styling",
-      contents: skillList.slice(3, 5),
+      contents: skillList.slice(5, 7),
     },
     {
       name: "Công cụ phát triển",
-      contents: skillList.slice(5, 9),
+      contents: skillList.slice(7, 11),
     },
   ];
 
