@@ -1,1 +1,0 @@
-Đéo Biết Ghi Gì

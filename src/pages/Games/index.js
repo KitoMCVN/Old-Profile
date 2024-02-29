@@ -1,7 +1,7 @@
 import Tippy from "@tippyjs/react";
 import "tippy.js/animations/scale.css";
 import "tippy.js/dist/tippy.css";
-import Img from "../../components/img"
+import Img from "../../components/img";
 import minecraftPcImg from "../../assets/imgs/games/minecraft.png";
 import minecraftPeImg from "../../assets/imgs/games/minecraftPe.png";
 import stardewValleyImg from "../../assets/imgs/games/stardewValley.png";
@@ -102,6 +102,7 @@ function Games() {
         <div className='grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-3'>
           {allGames.map(({ name, time, img }) => (
             <Tippy
+              key={time}
               arrow=' '
               offset={[-1, 5]}
               placement='top-start'
@@ -111,7 +112,7 @@ function Games() {
                   <p className='text-cyan-300'>{time} hours</p>
                 </div>
               }>
-              <div key={time} className='flex justify-center border-[1px] border-slate-800/10 items-center rounded-sm overflow-hidden h-[84px] w-full transition-transform ring-cyan-600 hover:ring-2 focus:ring-2'>
+              <div className='flex justify-center border-[1px] border-slate-800/10 items-center rounded-sm overflow-hidden h-[84px] w-full transition-transform ring-cyan-600 hover:ring-2 focus:ring-2'>
                 <Img className='object-cover bg-slate-300' src={img} alt={name} />
               </div>
             </Tippy>

@@ -1,4 +1,5 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+./src/env.js
 
 # dependencies
 /node_modules

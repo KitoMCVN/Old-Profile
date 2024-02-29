@@ -1,3 +1,5 @@
+import YouTubeComponent from "../../api/testYoutubeAPI";
+
 function Music() {
   return (
     <div className='font-bold text-neutral-800 w-full pb-4'>
@@ -6,6 +8,7 @@ function Music() {
         <h2>Music 🎶</h2>
       </div>
       <p>Những âm thanh chữa lành con tim 💖</p>
+      <YouTubeComponent></YouTubeComponent>
     </div>
   );
 }
