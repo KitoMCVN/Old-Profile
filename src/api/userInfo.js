@@ -5,6 +5,24 @@ import Tippy from "@tippyjs/react";
 import "tippy.js/animations/scale.css";
 import "tippy.js/dist/tippy.css";
 
+function CustomStatus({ customStatus }) {
+  return (
+    <>
+      {customStatus && (
+        <p className='text-sm text-slate-600 mt-[2px]'>
+          ▸ {customStatus.emoji && <span className='mr-1'>{customStatus.emoji.name}</span>}
+          {customStatus.state}
+        </p>
+      )}
+    </>
+  );
+}
+
+function replaceCharacters(inputString) {
+  return inputString.replace(/;/g, ',').replace(/'/g, ',');
+}
+
+
 function UserInfo() {
   const [userData, setUserData] = useState(null);
   const [isHovered, setIsHovered] = useState(false);
@@ -15,7 +33,8 @@ function UserInfo() {
     const fetchData = async () => {
       try {
         const response = await axios.get("https://api.lanyard.rest/v1/users/915876843884777472");
-        setUserData(response.data.data);
+        const userData = response.data.data;
+        setUserData(userData);
       } catch (error) {
         console.error("Lỗi:", error);
       }
@@ -39,7 +58,7 @@ function UserInfo() {
     fetchWeather();
   }, []);
 
-  if (!userData + !weather) {
+  if (!userData || !weather) {
     return (
       <>
         <div className='md:flex gap-6 items-center'>
@@ -74,7 +93,9 @@ function UserInfo() {
   }
 
   const { discord_user, activities, discord_status } = userData;
-  const { username, avatar } = discord_user;
+  const { avatar } = discord_user;
+  const customStatus = activities.find((activity) => activity.type === 4);
+  const listeningToSpotify = activities.find((activity) => activity.type === 2);
 
   const online = (
     <div className='flex items-center'>
@@ -84,17 +105,45 @@ function UserInfo() {
       <div className='ml-2 cursor-pointer' onMouseEnter={() => setIsHovered(true)} onMouseLeave={() => setIsHovered(false)}>
         <p>Có vẻ cậu ấy đang online</p>
         {isHovered && (
-          <div className='absolute z-10 translate-x-[-20px] p-2 rounded-xl bg-slate-50 border-dashed border-cyan-500 border-4'>
-            <p>Tui đang ở nhà 🏡 hoặc ngoài quán cafe ☕</p>
+          <div className='cursor-text absolute z-10 translate-x-[-20px] p-2 rounded-xl bg-slate-50 border-dashed border-cyan-500 border-4'>
+            <p className='font-bold'>Tui đang ở nhà 🏡 hoặc ngoài quán cafe ☕</p>
             {activities.length === 0 ? (
               <></>
             ) : (
               activities.map((activity) => (
-                <div key={activity.type}>
-                  <p>Đang Chơi 🌠: {activity.name}</p>
+                <div className='' key={activity.type}>
+                  {activity.type === 0 && <p>▸ Đang Chơi 🌠: {activity.name}</p>}
                 </div>
               ))
             )}
+            {listeningToSpotify && (
+              <div className=''>
+                <p>▸ Spotify 🎶: {listeningToSpotify.details} - {replaceCharacters(listeningToSpotify.state)}</p>
+              </div>
+            )}
+            <CustomStatus customStatus={customStatus} />
+          </div>
+        )}
+      </div>
+    </div>
+  );
+
+  const idle = (
+    <div className='flex items-center'>
+      <div className='size-3 rounded-full bg-yellow-500'>
+        <div className='size-3 rounded-full bg-yellow-500 animate-ping'></div>
+      </div>
+      <div className='ml-2 cursor-pointer' onMouseEnter={() => setIsHovered(true)} onMouseLeave={() => setIsHovered(false)}>
+        <p>Không hoạt động</p>
+        {isHovered && (
+          <div className='cursor-text absolute z-10 translate-x-[-20px] p-2 rounded-xl bg-slate-100 border-dashed border-cyan-500 border-4'>
+            <p>Có vẻ là 🧩 đang làm việc gì khác</p>
+            {listeningToSpotify && (
+              <div className=''>
+                <p>▸ Spotify 🎶: {listeningToSpotify.details} - {replaceCharacters(listeningToSpotify.state)}</p>
+              </div>
+            )}
+            <CustomStatus customStatus={customStatus} />
           </div>
         )}
       </div>
@@ -107,13 +156,33 @@ function UserInfo() {
         <div className='size-3 rounded-full bg-red-600 animate-ping'></div>
       </div>
       <div className='ml-2 cursor-pointer' onMouseEnter={() => setIsHovered(true)} onMouseLeave={() => setIsHovered(false)}>
-        <p>
-          Đang offline rồi
-          <input type='button' value='' />
-        </p>
+        <p>Đang offline rồi</p>
         {isHovered && (
-          <div className='absolute z-10 translate-x-[-20px] p-2 rounded-xl bg-slate-100 border-dashed border-cyan-500 border-4'>
-            <p>Có thể {username} đang ở ngoài 🚪 hoặc đang ngủ 💤</p>
+          <div className='cursor-text absolute z-10 translate-x-[-20px] p-2 rounded-xl bg-slate-100 border-dashed border-cyan-500 border-4'>
+            <p>Đang ở ngoài 🚪 hoặc đang ngủ 💤</p>
+            <CustomStatus customStatus={customStatus} />
+          </div>
+        )}
+      </div>
+    </div>
+  );
+
+  const dnd = (
+    <div className='flex items-center'>
+      <div className='size-3 rounded-full bg-red-900'>
+        <div className='size-3 rounded-full bg-red-900 animate-ping'></div>
+      </div>
+      <div className='ml-2 cursor-pointer' onMouseEnter={() => setIsHovered(true)} onMouseLeave={() => setIsHovered(false)}>
+        <p>Không muốn bị làm phiền</p>
+        {isHovered && (
+          <div className='cursor-text absolute z-10 translate-x-[-20px] p-2 rounded-xl bg-slate-100 border-dashed border-cyan-500 border-4'>
+            <p>Hong muốn bị làm phiền 🚫 đâu!</p>
+             {listeningToSpotify && (
+              <div className=''>
+                <p>▸ Spotify 🎶: {listeningToSpotify.details} - {replaceCharacters(listeningToSpotify.state)}</p>
+              </div>
+            )}
+            <CustomStatus customStatus={customStatus} />
           </div>
         )}
       </div>
@@ -147,7 +216,7 @@ function UserInfo() {
           </div>
         </div>
       </div>
-      <div className='font-semibold text-gray-900 mt-4 '>{discord_status === "online" ? online : offline}</div>
+      <div className='font-semibold text-gray-900 mt-4 '>{discord_status === "online" ? online : discord_status === "idle" ? idle : discord_status === "dnd" ? dnd : offline}</div>
       <div>
         <div className='flex items-center'>
           <svg className='w-5 h-5 text-gray-800  -translate-x-[4px] -translate-y-[1px]' aria-hidden='true' xmlns='http://www.w3.org/2000/svg' fill='currentColor' viewBox='0 0 24 24'>
@@ -155,12 +224,11 @@ function UserInfo() {
           </svg>
           <div className='font-semibold text-gray-900 cursor-pointer' onMouseEnter={() => setIsWeather(true)} onMouseLeave={() => setIsWeather(false)}>
             <p>Sóc Trăng, Việt Nam</p>
-
             {isWeather && (
-              <div className='absolute z-10 translate-x-[-20px] p-2 rounded-xl bg-slate-100 border-dashed border-cyan-500 border-4'>
+              <div className='cursor-text absolute z-10 translate-x-[-20px] p-2 rounded-xl bg-slate-100 border-dashed border-cyan-500 border-4'>
                 <p>⛺ Thành phố: {weather.name}</p>
                 <p>⛅ Nhiệt độ: {weather.main.temp} ºC</p>
-                <p>💧 Độ ẩm: {weather.main.humidity}%</p>
+                <p>🚿 Độ ẩm: {weather.main.humidity}%</p>
               </div>
             )}
           </div>
