@@ -4,6 +4,8 @@ const routes = {
   games: "/games",
   projects: "/projects",
   specs: "/specs",
+  projectDetails: "/projects/:projectName",
+  notfound: "/*",
 };
 
 export default routes;
