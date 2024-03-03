@@ -19,9 +19,8 @@ function CustomStatus({ customStatus }) {
 }
 
 function replaceCharacters(inputString) {
-  return inputString.replace(/;/g, ',').replace(/'/g, ',');
+  return inputString.replace(/;/g, ",").replace(/'/g, ",");
 }
-
 
 function UserInfo() {
   const [userData, setUserData] = useState(null);
@@ -29,19 +28,15 @@ function UserInfo() {
   const [isWeather, setIsWeather] = useState(false);
   const [weather, setWeather] = useState(null);
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await axios.get("https://api.lanyard.rest/v1/users/915876843884777472");
-        const userData = response.data.data;
-        setUserData(userData);
-      } catch (error) {
-        console.error("Lỗi:", error);
-      }
-    };
-
-    fetchData();
-  }, []);
+  const fetchData = async () => {
+    try {
+      const response = await axios.get("https://api.lanyard.rest/v1/users/915876843884777472");
+      const userData = response.data.data;
+      setUserData(userData);
+    } catch (error) {
+      console.error("Lỗi:", error);
+    }
+  };
 
   const fetchWeather = () => {
     axios
@@ -55,7 +50,18 @@ function UserInfo() {
   };
 
   useEffect(() => {
+    fetchData();
     fetchWeather();
+
+    const intervalId = setInterval(
+      () => {
+        fetchData();
+        fetchWeather();
+      },
+      1 * 60 * 1000
+    );
+
+    return () => clearInterval(intervalId);
   }, []);
 
   if (!userData || !weather) {
@@ -118,7 +124,9 @@ function UserInfo() {
             )}
             {listeningToSpotify && (
               <div className=''>
-                <p>▸ Spotify 🎶: {listeningToSpotify.details} - {replaceCharacters(listeningToSpotify.state)}</p>
+                <p>
+                  ▸ Spotify 🎶: {listeningToSpotify.details} - {replaceCharacters(listeningToSpotify.state)}
+                </p>
               </div>
             )}
             <CustomStatus customStatus={customStatus} />
@@ -140,7 +148,9 @@ function UserInfo() {
             <p>Có vẻ là 🧩 đang làm việc gì khác</p>
             {listeningToSpotify && (
               <div className=''>
-                <p>▸ Spotify 🎶: {listeningToSpotify.details} - {replaceCharacters(listeningToSpotify.state)}</p>
+                <p>
+                  ▸ Spotify 🎶: {listeningToSpotify.details} - {replaceCharacters(listeningToSpotify.state)}
+                </p>
               </div>
             )}
             <CustomStatus customStatus={customStatus} />
@@ -177,9 +187,11 @@ function UserInfo() {
         {isHovered && (
           <div className='cursor-text absolute z-10 translate-x-[-20px] p-2 rounded-xl bg-slate-100 border-dashed border-cyan-500 border-4'>
             <p>Hong muốn bị làm phiền 🚫 đâu!</p>
-             {listeningToSpotify && (
+            {listeningToSpotify && (
               <div className=''>
-                <p>▸ Spotify 🎶: {listeningToSpotify.details} - {replaceCharacters(listeningToSpotify.state)}</p>
+                <p>
+                  ▸ Spotify 🎶: {listeningToSpotify.details} - {replaceCharacters(listeningToSpotify.state)}
+                </p>
               </div>
             )}
             <CustomStatus customStatus={customStatus} />
