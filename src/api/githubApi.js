@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCodeFork, faStar, faBook } from "@fortawesome/free-solid-svg-icons";
+import { faCodeFork, faStar, faBook, faFile } from "@fortawesome/free-solid-svg-icons";
 import { faHtml5, faJs, faPython, faJava, faPhp, faSwift, faCss3 } from "@fortawesome/free-brands-svg-icons";
 
 const GitHubProjects = () => {
@@ -60,7 +60,7 @@ const GitHubProjects = () => {
               <div className='flex gap-3 text-sm'>
                 {project.language && (
                   <p>
-                    {langIcon[project.language]} {project.language}
+                    {langIcon[project.language] || <FontAwesomeIcon icon={faFile} />} {project.language}
                   </p>
                 )}
                 <p>

@@ -105,7 +105,7 @@ function UserInfo() {
 
   const online = (
     <div className='flex items-center'>
-      <div className='size-3 rounded-full bg-cyan-500'>
+      <div className='translate-y-[-1px] size-3 rounded-full bg-cyan-500'>
         <div className='size-3 rounded-full bg-cyan-500 animate-ping'></div>
       </div>
       <div className='ml-2 cursor-pointer' onMouseEnter={() => setIsHovered(true)} onMouseLeave={() => setIsHovered(false)}>
@@ -138,7 +138,7 @@ function UserInfo() {
 
   const idle = (
     <div className='flex items-center'>
-      <div className='size-3 rounded-full bg-yellow-500'>
+      <div className='translate-y-[-1px] size-3 rounded-full bg-yellow-500'>
         <div className='size-3 rounded-full bg-yellow-500 animate-ping'></div>
       </div>
       <div className='ml-2 cursor-pointer' onMouseEnter={() => setIsHovered(true)} onMouseLeave={() => setIsHovered(false)}>
@@ -162,7 +162,7 @@ function UserInfo() {
 
   const offline = (
     <div className='flex items-center'>
-      <div className='size-3 rounded-full bg-red-600'>
+      <div className='translate-y-[-1px] size-3 rounded-full bg-red-600'>
         <div className='size-3 rounded-full bg-red-600 animate-ping'></div>
       </div>
       <div className='ml-2 cursor-pointer' onMouseEnter={() => setIsHovered(true)} onMouseLeave={() => setIsHovered(false)}>
@@ -179,7 +179,7 @@ function UserInfo() {
 
   const dnd = (
     <div className='flex items-center'>
-      <div className='size-3 rounded-full bg-red-900'>
+      <div className='translate-y-[-1px] size-3 rounded-full bg-red-900'>
         <div className='size-3 rounded-full bg-red-900 animate-ping'></div>
       </div>
       <div className='ml-2 cursor-pointer' onMouseEnter={() => setIsHovered(true)} onMouseLeave={() => setIsHovered(false)}>
