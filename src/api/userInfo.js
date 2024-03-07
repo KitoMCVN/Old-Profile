@@ -27,6 +27,7 @@ function UserInfo() {
   const [isHovered, setIsHovered] = useState(false);
   const [isWeather, setIsWeather] = useState(false);
   const [weather, setWeather] = useState(null);
+  const [elapsedTime, setElapsedTime] = useState(0);
 
   const fetchData = async () => {
     try {
@@ -63,6 +64,36 @@ function UserInfo() {
 
     return () => clearInterval(intervalId);
   }, []);
+
+  useEffect(() => {
+    if (userData) {
+      const startTimestamp = userData.activities.find((activity) => activity.type === 0)?.timestamps.start;
+      const intervalId = setInterval(() => {
+        const currentTimestamp = Date.now();
+        const elapsed = currentTimestamp - startTimestamp;
+        setElapsedTime(elapsed);
+      }, 1000);
+
+      return () => clearInterval(intervalId);
+    }
+  }, [userData]);
+
+  const formatElapsedTime = (milliseconds) => {
+    const seconds = Math.floor(milliseconds / 1000);
+    const minutes = Math.floor(seconds / 60);
+    const hours = Math.floor(minutes / 60);
+    const days = Math.floor(hours / 24);
+
+    if (days > 0) {
+      return `${days}d ${hours % 24}h ${minutes % 60}m ${seconds % 60}s"`;
+    } else if (hours > 0) {
+      return `${hours}h ${minutes % 60}m ${seconds % 60}s`;
+    } else if (minutes > 0) {
+      return `${minutes}m ${seconds % 60}s`;
+    } else {
+      return `${seconds}s`;
+    }
+  };
 
   if (!userData || !weather) {
     return (
@@ -118,7 +149,11 @@ function UserInfo() {
             ) : (
               activities.map((activity) => (
                 <div className='' key={activity.type}>
-                  {activity.type === 0 && <p>▸ Đang Chơi 🌠: {activity.name}</p>}
+                  {activity.type === 0 && (
+                    <p>
+                      ▸ Đang Chơi 🌠: {activity.name} <span className='text-sm text-slate-600'>({formatElapsedTime(elapsedTime)} đã trôi qua)</span>
+                    </p>
+                  )}
                 </div>
               ))
             )}
