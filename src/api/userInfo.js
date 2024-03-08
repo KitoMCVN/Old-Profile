@@ -254,7 +254,7 @@ function UserInfo() {
           </h2>
           <div className='w-full h-1 bg-cyan-500 rounded-sm my-1'></div>
           <div className='font-semibold text-justify'>
-            Chào mọi người! Tui là KitoMC (<span className='text-cyan-800'>200x</span>), lập trình viên web tự học và là người chơi Minecraft. Với kiến thức tự học và các dự án thú vị, tui đang tìm kiếm cơ hội mới để đem
+            Chào mọi người! Tui là KitoMC (<span className='text-cyan-600'>200x</span>), lập trình viên web tự học và là người chơi Minecraft. Với kiến thức tự học và các dự án thú vị, tui đang tìm kiếm cơ hội mới để đem
             sự sáng tạo và đam mê vào làm việc.{" "}
             <Link className='text-slate-600 underline' to='/skills'>
               Xem thêm không nhỉ

@@ -8,17 +8,17 @@ function Footer() {
       <div className='sm:flex text-center justify-between text-sm w-full text-neutral-800 font-medium'>
         <p>
           2024 © KitoMC • Made with{" "}
-          <a href='https://react.dev/' target='_blank' rel='noopener noreferrer' className='text-cyan-800'>
+          <a href='https://react.dev/' target='_blank' rel='noopener noreferrer' className='text-cyan-600'>
             React
           </a>{" "}
           x{" "}
-          <a href='https://tailwindcss.com/' target='_blank' rel='noopener noreferrer' className='text-cyan-800'>
+          <a href='https://tailwindcss.com/' target='_blank' rel='noopener noreferrer' className='text-cyan-600'>
             Tailwind
           </a>
         </p>
         <p>
           <Tippy animation='scale' content='Tui lấy ý tưởng'>
-            <a className='text-cyan-800' href='https://omar11.sa/' target='_blank' rel='noopener noreferrer'>
+            <a className='text-cyan-600' href='https://omar11.sa/' target='_blank' rel='noopener noreferrer'>
               Omar Abdulaziz <span className='text-neutral-800'>•</span> ✨
             </a>
           </Tippy>
