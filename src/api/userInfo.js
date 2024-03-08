@@ -85,7 +85,7 @@ function UserInfo() {
     const days = Math.floor(hours / 24);
 
     if (days > 0) {
-      return `${days}d ${hours % 24}h ${minutes % 60}m ${seconds % 60}s"`;
+      return `${days}d ${hours % 24}h ${minutes % 60}m ${seconds % 60}s`;
     } else if (hours > 0) {
       return `${hours}h ${minutes % 60}m ${seconds % 60}s`;
     } else if (minutes > 0) {
