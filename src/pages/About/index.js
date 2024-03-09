@@ -14,14 +14,26 @@ function About() {
       </div>
       <div className='mt-4 font-semibold md:grid grid-cols-2 gap-x-4'>
         <div>
-          <h3 className='mb-2 text-xl mt-6'>
-            <span>⬤</span> Tôi học lập trình như thế nào? 🤔
-          </h3>
-          <p className='text-slate-800/90'>
-            Tôi luôn tò mò về cách mà các trang web và trò chơi hoạt động. Từ việc sử dụng HTML để thiết kế giao diện, CSS để tạo kiểu, JavaScript để thêm chức năng, đến việc học React vào đầu năm 2024, mỗi bước tiến mới
-            đều mở ra một cánh cửa mới để hiểu sâu hơn về internet. Sự tò mò và đam mê không ngừng luôn dẫn dắt tôi trên hành trình này. Tôi tin rằng với kiên nhẫn và nỗ lực, mọi điều đều có thể trở thành hiện thực trong
-            thế giới công nghệ!
-          </p>
+          <div>
+            <h3 className='mb-2 text-xl mt-6'>
+              <span>⬤</span> Tôi học lập trình như thế nào? 🤔
+            </h3>
+            <></>
+            <p className='text-slate-800/90'>
+              Tôi luôn tò mò về cách mà các trang web và trò chơi hoạt động. Từ việc sử dụng <a href="">HTML</a> để thiết kế giao diện, CSS để tạo kiểu, JavaScript để thêm chức năng, đến việc học React vào đầu năm 2024, mỗi bước tiến
+              mới đều mở ra một cánh cửa mới để hiểu sâu hơn về internet. Sự tò mò và đam mê không ngừng luôn dẫn dắt tôi trên hành trình này. Tôi tin rằng với kiên nhẫn và nỗ lực, mọi điều đều có thể trở thành hiện thực
+              trong thế giới công nghệ!
+            </p>
+          </div>
+          <div>
+            <h3 className='mb-2 text-xl mt-6'>
+              <span>⬤</span> Trang web này để làm gì? 🤔
+            </h3>
+            <p className='text-slate-800/90'>
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Molestiae incidunt soluta, fuga expedita odit reprehenderit dolorum delectus debitis aliquid atque repudiandae error earum placeat vero alias minima
+              in, veniam ut.
+            </p>
+          </div>
         </div>
         <div>
           <div className='hidden md:block md:pl-12 lg:pl-28 xl:pl-32'>
