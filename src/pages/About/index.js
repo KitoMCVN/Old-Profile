@@ -1,9 +1,9 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBriefcase, faEarthAsia, faUserGraduate, faSchool } from "@fortawesome/free-solid-svg-icons";
 import { faFaceGrinBeamSweat } from "@fortawesome/free-regular-svg-icons";
-import Tippy from "@tippyjs/react";
-import "tippy.js/animations/scale.css";
-import "tippy.js/dist/tippy.css";
+// import Tippy from "@tippyjs/react";
+// import "tippy.js/animations/scale.css";
+// import "tippy.js/dist/tippy.css";
 
 function About() {
   return (
@@ -65,14 +65,12 @@ function About() {
                 </div>
               </div>
               <div className='mt-6'>
-                <Tippy animation='scale' content='Xấu Lắm 😥'>
-                  <a href='http://thcsdaingai.pgdlongphu.edu.vn/' className='w-full py-2 flex text-sm hover:bg-slate-700 items-center gap-2 justify-center text-slate-100 bg-slate-800 rounded-lg'>
-                    <span>
-                      <FontAwesomeIcon icon={faFaceGrinBeamSweat} />
-                    </span>
-                    <span>Web trường</span>
-                  </a>
-                </Tippy>
+                <a href='http://thcsdaingai.pgdlongphu.edu.vn/' className='w-full py-2 flex text-sm hover:bg-slate-700 items-center gap-2 justify-center text-slate-100 bg-slate-800 rounded-lg'>
+                  <span>
+                    <FontAwesomeIcon icon={faFaceGrinBeamSweat} />
+                  </span>
+                  <span>Web trường</span>
+                </a>
               </div>
             </div>
           </div>
