@@ -1,6 +1,8 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBriefcase, faEarthAsia, faUserGraduate, faSchool } from "@fortawesome/free-solid-svg-icons";
 import { faFaceGrinBeamSweat } from "@fortawesome/free-regular-svg-icons";
+import Img from "../../components/img";
+import ChillImg from "../../assets/imgs/images.jpg";
 // import Tippy from "@tippyjs/react";
 // import "tippy.js/animations/scale.css";
 // import "tippy.js/dist/tippy.css";
@@ -18,20 +20,20 @@ function About() {
             <h3 className='mb-2 text-xl mt-6'>
               <span>⬤</span> Tôi học lập trình như thế nào? 🤔
             </h3>
-            <></>
-            <p className='text-slate-800/90'>
-              Tôi luôn tò mò về cách mà các trang web và trò chơi hoạt động. Từ việc sử dụng <a href="">HTML</a> để thiết kế giao diện, CSS để tạo kiểu, JavaScript để thêm chức năng, đến việc học React vào đầu năm 2024, mỗi bước tiến
+            <p className='text-slate-800/90 text-pretty'>
+              Tôi luôn tò mò về cách mà các trang web và trò chơi hoạt động. Từ việc sử dụng HTML để thiết kế giao diện, CSS để tạo kiểu, JavaScript để thêm chức năng, đến việc học React vào đầu năm 2024, mỗi bước tiến
               mới đều mở ra một cánh cửa mới để hiểu sâu hơn về internet. Sự tò mò và đam mê không ngừng luôn dẫn dắt tôi trên hành trình này. Tôi tin rằng với kiên nhẫn và nỗ lực, mọi điều đều có thể trở thành hiện thực
               trong thế giới công nghệ!
             </p>
           </div>
           <div>
             <h3 className='mb-2 text-xl mt-6'>
-              <span>⬤</span> Trang web này để làm gì? 🤔
+              <span>⬤</span> Trang web này để làm gì? 🍜
             </h3>
-            <p className='text-slate-800/90'>
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Molestiae incidunt soluta, fuga expedita odit reprehenderit dolorum delectus debitis aliquid atque repudiandae error earum placeat vero alias minima
-              in, veniam ut.
+            <Img className='drag-none size-40 sm:size-44 md:size-48 lg:size-60 float-right mb-1 ml-2 select-none rounded-md border-4 border-pink-600/50 bg-neutral-800' alt='img' src={ChillImg}></Img>
+            <p className='text-slate-800/90 text-pretty'>
+              Trang web này là một trang gian cá nhân giới thiệu về bản thân, thành tựu và dự án đã tham gia. Tôi chia sẻ hành trình cá nhân, kinh nghiệm và kỹ năng chuyên môn. Bạn có thể tìm hiểu về lý lịch, kinh nghiệm
+              và kỹ năng của tôi trong các lĩnh vực cụ thể. Ngoài ra, đây cũng là nơi tôi tạo kết nối, chia sẻ thông tin và ý kiến với cộng đồng. Hy vọng bạn hiểu thêm về tôi và có cơ hội hợp tác trong tương lai.
             </p>
           </div>
         </div>
