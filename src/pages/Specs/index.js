@@ -3,7 +3,7 @@ import desktop from "../../assets/imgs/desktop.png";
 
 function Specs() {
   useEffect(() => {
-    document.title = "🖥 | KitoMC";
+    document.title = "🖥 - KitoMC";
   }, []);
 
   const laptopSpecs = {

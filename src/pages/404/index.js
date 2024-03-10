@@ -4,7 +4,7 @@ import "./notFound.scss";
 
 function NotFound() {
   useEffect(() => {
-    document.title = "💢 | KitoMC";
+    document.title = "💢 - KitoMC";
   }, []);
 
   return (

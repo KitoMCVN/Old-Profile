@@ -16,7 +16,7 @@ import picopark from "../../assets/imgs/games/all/picopark.png";
 
 function Games() {
   useEffect(() => {
-    document.title = "🎮 | KitoMC";
+    document.title = "🎮 - KitoMC";
   }, []);
 
   const games = [

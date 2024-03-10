@@ -44,7 +44,7 @@ class Skill {
 
 function Skills() {
   useEffect(() => {
-    document.title = "📚 | KitoMC";
+    document.title = "📚 - KitoMC";
   }, []);
 
   const [openCategory, setOpenCategory] = useState(0);

@@ -3,7 +3,7 @@ import GithubProjects from "../../api/githubApi";
 
 function Projects() {
   useEffect(() => {
-    document.title = "🗂 | KitoMC";
+    document.title = "🗂 - KitoMC";
   }, []);
 
   return (

@@ -60,7 +60,7 @@ const ProjectDetails = () => {
   }
 
   useEffect(() => {
-    document.title = `📂/${projectName} | KitoMC`;
+    document.title = `📂/${projectName} Ι KitoMC`;
   }, [projectName]);
 
   return (

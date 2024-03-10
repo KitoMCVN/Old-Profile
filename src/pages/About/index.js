@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBriefcase, faEarthAsia, faUserGraduate, faSchool } from "@fortawesome/free-solid-svg-icons";
 import { faFaceGrinBeamSweat } from "@fortawesome/free-regular-svg-icons";
+import { faBriefcase, faEarthAsia, faUserGraduate, faSchool } from "@fortawesome/free-solid-svg-icons";
 import ChillImg from "../../assets/imgs/images.jpg";
 import Img from "../../components/img";
 
