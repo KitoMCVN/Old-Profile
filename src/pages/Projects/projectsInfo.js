@@ -59,6 +59,10 @@ const ProjectDetails = () => {
     totalLines = Object.values(languages).reduce((acc, cur) => acc + cur, 0);
   }
 
+  useEffect(() => {
+    document.title = `📂/${projectName} | KitoMC`;
+  }, [projectName]);
+
   return (
     <div className='w-full font-bold text-slate-900'>
       <h2 className='text-2xl mb-1'>{projectName}</h2>

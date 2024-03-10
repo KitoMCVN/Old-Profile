@@ -1,7 +1,12 @@
+import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import "./notFound.scss";
 
 function NotFound() {
+  useEffect(() => {
+    document.title = "💢 | KitoMC";
+  }, []);
+
   return (
     <div className='font-bold text-neutral-800 w-full pb-4'>
       <div className='mb-3 flex text-3xl gap-2 font-bold'>

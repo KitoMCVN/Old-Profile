@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import Tippy from "@tippyjs/react";
 import "tippy.js/animations/scale.css";
 import "tippy.js/dist/tippy.css";
@@ -14,6 +15,10 @@ import ggd from "../../assets/imgs/games/all/ggd.jpg";
 import picopark from "../../assets/imgs/games/all/picopark.png";
 
 function Games() {
+  useEffect(() => {
+    document.title = "🎮 | KitoMC";
+  }, []);
+
   const games = [
     {
       name: "Minecraft Bedrock",

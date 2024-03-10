@@ -1,13 +1,15 @@
+import { useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBriefcase, faEarthAsia, faUserGraduate, faSchool } from "@fortawesome/free-solid-svg-icons";
 import { faFaceGrinBeamSweat } from "@fortawesome/free-regular-svg-icons";
-import Img from "../../components/img";
 import ChillImg from "../../assets/imgs/images.jpg";
-// import Tippy from "@tippyjs/react";
-// import "tippy.js/animations/scale.css";
-// import "tippy.js/dist/tippy.css";
+import Img from "../../components/img";
 
 function About() {
+  useEffect(() => {
+    document.title = "KitoMC";
+  }, []);
+
   return (
     <div className='font-bold text-neutral-800 w-full pb-4'>
       <div className='mb-3 flex text-3xl gap-2 font-bold'>

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStar as brandStar } from "@fortawesome/free-solid-svg-icons";
 import { faStar as regularStar } from "@fortawesome/free-regular-svg-icons";
@@ -43,6 +43,10 @@ class Skill {
 }
 
 function Skills() {
+  useEffect(() => {
+    document.title = "📚 | KitoMC";
+  }, []);
+
   const [openCategory, setOpenCategory] = useState(0);
 
   const toggleCategory = (index) => {

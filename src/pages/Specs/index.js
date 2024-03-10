@@ -1,6 +1,11 @@
+import { useEffect } from "react";
 import desktop from "../../assets/imgs/desktop.png";
 
 function Specs() {
+  useEffect(() => {
+    document.title = "🖥 | KitoMC";
+  }, []);
+
   const laptopSpecs = {
     laptopCpu: "Intel Core 2 Duo T6570 (2.10 GHz, 800 MHz)",
     laptopRam: "3GB DDR2 (667MHz)",
