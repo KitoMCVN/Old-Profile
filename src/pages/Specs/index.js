@@ -19,7 +19,7 @@ function Specs() {
   const phoneSpecs = {
     phoneCpu: "MediaTek Helio G99 Ultra",
     phoneRam: "8 GB",
-    phoneDisplay: "AMOLED 6.67" 120Hz",
+    phoneDisplay: "AMOLED 6.67' 120Hz",
     phoneOs: "HyperOS 2.0.1 (Android 15)",
     phoneDisk: "128 GB",
     phoneCam: "Chính 108 MP & Phụ 2 MP, 2 MP (Sau) | 20 MP (Trước)",
