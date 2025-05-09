@@ -42,7 +42,7 @@ function Specs() {
 
   const PhoneInfo = ({ phoneCpu, phoneRam, phoneDisplay, phoneOs, phoneDisk, phoneCam, phonePin }) => (
     <>
-      <ul className='list-disc text-sm ml-6'
+      <ul className='list-disc text-sm ml-6'>
         <li>CPU: {phoneCpu}</li>
         <li>RAM: {phoneRam}</li>
         <li>Disk: {phoneDisk}</li>
